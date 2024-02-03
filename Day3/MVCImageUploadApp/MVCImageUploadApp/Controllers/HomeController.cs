@@ -52,7 +52,7 @@ namespace MVCImageUploadApp.Controllers
         
 
             public async Task<IActionResult> DisplayImages()
-        {
+         {
             BlobContainerClient containerClient = await GetCloudBlobContainer(_config.ContainerName);
             List<string> results = new List<string>();
             await foreach (BlobItem blobItem in containerClient.GetBlobsAsync())
