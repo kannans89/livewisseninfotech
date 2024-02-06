@@ -3,7 +3,7 @@ using ConsoleTopicReceiverApp;
 using Newtonsoft.Json;
 
 
-string connectionString = "Endpoint=sb://wissentechsb2024.servicebus.windows.net/;SharedAccessKeyName=readPolicy;SharedAccessKey=FT+f8V4ys45MmZiANKiHGILv0SOsb8lgO+ASbE1udNg=;EntityPath=stocks";
+string connectionString = "Endpoint=sb://wissentechsb2024.servicebus.windows.net/;SharedAccessKeyName=readPolicy;SharedAccessKey=FT+f8V4ys45MmZiANKiHGILv0SOsb8lgO+ASbE1udNg=;EntityPath=stock";
 string topicName = "stocks";
 string subscriptionName = "subB";//change to ConsumerA,ConsumerB,ConsumerC
 
