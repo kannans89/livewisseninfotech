@@ -1,0 +1,9 @@
+select * from dept
+
+begin transaction
+  insert into dept values(100,'dummy','dummy');
+  select * from dept
+
+rollback
+
+select * from dept
