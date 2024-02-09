@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameCoreLib
 {
-    public class Board
+    public class Board : IBoard
     {
         private Cell[] _cells = new Cell[9];
 

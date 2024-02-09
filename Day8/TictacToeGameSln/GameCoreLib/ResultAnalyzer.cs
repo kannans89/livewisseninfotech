@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 
 namespace GameCoreLib
 {
-    public class ResultAnalyzer
+    public class ResultAnalyzer : IResultAnalyzer
     {
-        private Board _board;
-        public ResultAnalyzer(Board board)
+        private IBoard _board;
+        public ResultAnalyzer(IBoard board)
         {
             _board = board;
         }
         public ResultType Analyze()
         {
-            if(_board.IsEmpty())
-             return ResultType.NotStarted;
+            if (_board.IsEmpty())
+                return ResultType.NotStarted;
 
             //Win
-            if(MatchVertically() || MatchHorizontally() || MatchDiagonally())
+            if (MatchVertically() || MatchHorizontally() || MatchDiagonally())
                 return ResultType.Win;
 
             //Draw
-            if(_board.IsBoardFull())
+            if (_board.IsBoardFull())
                 return ResultType.Draw;
 
 
@@ -34,22 +34,23 @@ namespace GameCoreLib
 
         private bool MatchDiagonally()
         {
-            if (CheckDiagonallyForX() || CheckDiagonallyForX())
+            if (CheckDiagonallyForX() || CheckDiagonllayForO())
                 return true;
             return false;
         }
-        private bool MatchHorizontally() { 
-        
-            if(CheckHorizonallyForX()||CheckHorizontallyForO())
+        private bool MatchHorizontally()
+        {
+
+            if (CheckHorizonallyForX() || CheckHorizontallyForO())
                 return true;
             return false;
         }
-      
-        
+
+
 
         private bool MatchVertically()
         {
-           if(CheckVertiallyForX()||CheckVertiallyForO())
+            if (CheckVertiallyForX() || CheckVertiallyForO())
                 return true;
             return false;
         }
@@ -162,6 +163,6 @@ namespace GameCoreLib
 
             return false;
         }
-       
+
     }
 }

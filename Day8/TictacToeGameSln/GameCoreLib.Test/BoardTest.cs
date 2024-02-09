@@ -14,10 +14,12 @@ namespace GameCoreLib.Test
         public void Board_CreatedAllEmptyCells()
         {
             var board = new Board();
-            foreach (var cell in board.Cells)
-            {
-                Assert.That(cell.Mark, Is.EqualTo(MarkType.Empty));
-            }
+
+            Assert.That(board.IsEmpty(), Is.True);
+            //foreach (var cell in board.Cells)
+            //{
+            //    Assert.That(cell.Mark, Is.EqualTo(MarkType.Empty));
+            //}
                 
            // Assert.That(board.Cells, Is.All.EqualTo(MarkType.Empty));
         }
